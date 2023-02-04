@@ -1,1 +1,1 @@
-# cmpe172-thinhh
+# CMPE 172 Git Repo
