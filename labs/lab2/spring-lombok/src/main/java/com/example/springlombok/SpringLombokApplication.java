@@ -15,7 +15,7 @@ public class SpringLombokApplication {
 	}
 
 	@GetMapping("/hello")
-	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public String InheritableThreadLocalo(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		ValAndVarUserDemo.print() ;
 		FieldLevelGetterSetterDemo.print() ;
