@@ -2,6 +2,14 @@ all: clean
 
 clean: 
 	find . -name '*.log' -type f -exec rm -f {} \; 
+	rm -rf node_modules
+
+setup:
+	nvm install 14.17.3
+	nvm use 14.17.3
+
+install:
+	npm install
 
 run:
 	node app.js
