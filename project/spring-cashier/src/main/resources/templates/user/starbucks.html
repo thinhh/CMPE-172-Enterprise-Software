@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
     <title>Starbucks Reserved</title>
@@ -38,13 +40,19 @@
 
 <body onload="selectedStore()">
 
-<h1 align="center">Welcome to Starbucks Reserved</h1>
+<h1 align="center">Welcome to Starbucks Cashier</h1>
+<!-- LOGOUT SECTION -->
+<div class="center">
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</div>
 
 <!-- FORM SECTION -->
 
-<form name="form" th:object="${command}" method="post" action="">
+<form name="form" th:object="${command}" method="post" th:action="@{/user/starbucks}">
 
-  <input type="hidden" name="register" id="register" th:field="*{register}" />
+  <input type="hidden" name="register" id="register" th:field="*{register}"  />
 
     <p>
     <div align="center">

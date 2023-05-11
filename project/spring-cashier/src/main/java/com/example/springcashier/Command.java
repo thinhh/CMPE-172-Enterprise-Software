@@ -12,7 +12,8 @@ class Command {
     private String message ;
     private String stores ;
     private String register ; 
-    
+    private String timestamp ;
+    private String hash ;
 }
 
 

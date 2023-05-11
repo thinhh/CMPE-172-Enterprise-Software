@@ -3,10 +3,25 @@ package com.example.springcashier;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
+
+@Entity // This tells Hibernate to make a table out of this class
+@Table(name = "Order_Drink")
 @Data
 @RequiredArgsConstructor
 class Order {
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+    
+    @Column(nullable=false)
     private String drink ;
     private String milk ;
     private String size ;
@@ -14,18 +29,60 @@ class Order {
     private String register ;
     private String status ;
     
-    public static Order GetNewOrder() {
-     	Order o = new Order() ;
-
-    	o.drink = "Caffe Americano" ;
-    	o.milk = "Soy Milk" ;
-    	o.size = "Venti" ;
-    	o.status = "Ready for Payment" ;
-    	o.total = "$3.16" ;
-
-    	return o ;
+    public Integer getId() {
+        return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDrink() {
+        return drink;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
+    }
+
+    public String getMilk() {
+        return milk;
+    }
+
+    public void setMilk(String milk) {
+        this.milk = milk;
+    }
+
+     public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+     public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+     public String getRegister() {
+        return register;
+    }
+
+    public void setRegister(String register) {
+        this.register = register;
+    }
+
+     public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 }
 
