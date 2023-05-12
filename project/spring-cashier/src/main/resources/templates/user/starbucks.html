@@ -34,11 +34,91 @@
             document.getElementById("stores").options[0].selected=true
         } 
     }
+    function selectedDrink() {
+        drink = document.getElementById("drink").value
+        switch(drink) {
+          case "Caffe Latte":
+            document.getElementById("drink").options[0].selected=true
+            break;
+          case "Caffe Americano":
+            document.getElementById("drink").options[1].selected=true
+            break;
+          case "Caffe Mocha":
+            document.getElementById("drink").options[2].selected=true
+            break;
+          case "Espresso":
+            document.getElementById("drink").options[3].selected=true
+            break;
+          case "Cappuccino":
+            document.getElementById("drink").options[4].selected=true
+            break;
+          default:
+            document.getElementById("stores").options[0].selected=true
+        } 
+    }
+
+    function selectedMilk() {
+        milk = document.getElementById("milk").value
+        switch(milk) {
+          case "5012349":
+            document.getElementById("stores").options[0].selected=true
+            break;
+          case "1287612":
+            document.getElementById("stores").options[1].selected=true
+            break;
+          case "6498234":
+            document.getElementById("stores").options[2].selected=true
+            break;
+          case "7812386":
+            document.getElementById("stores").options[3].selected=true
+            break;
+          case "8723098":
+            document.getElementById("stores").options[4].selected=true
+            break;
+          case "9621043":
+            document.getElementById("stores").options[5].selected=true
+            break;
+          case "1393478":
+            document.getElementById("stores").options[6].selected=true
+            break;
+          default:
+            document.getElementById("stores").options[0].selected=true
+        } 
+    }
+
+    function selectedStore() {
+        size = document.getElementById("size").value
+        switch(size) {
+          case "5012349":
+            document.getElementById("stores").options[0].selected=true
+            break;
+          case "1287612":
+            document.getElementById("stores").options[1].selected=true
+            break;
+          case "6498234":
+            document.getElementById("stores").options[2].selected=true
+            break;
+          case "7812386":
+            document.getElementById("stores").options[3].selected=true
+            break;
+          case "8723098":
+            document.getElementById("stores").options[4].selected=true
+            break;
+          case "9621043":
+            document.getElementById("stores").options[5].selected=true
+            break;
+          case "1393478":
+            document.getElementById("stores").options[6].selected=true
+            break;
+          default:
+            document.getElementById("stores").options[0].selected=true
+        } 
+    }
 </script>
 
 </head>
 
-<body onload="selectedStore()">
+<body onload="selectedStore(); selectedDrink(); selectedMilk(); selectedSize()">
 
 <h1 align="center">Welcome to Starbucks Cashier</h1>
 <!-- LOGOUT SECTION -->
@@ -73,7 +153,35 @@
           <option value="1393478">Deadwood</option>
         </select> 
     </div>                        
-
+    <div align="center">
+        <label for="drink">Select Drink:</label>
+        <select name="drink" id="drink">
+          <option value="Caffe Latte">Caffe Latte</option>
+          <option value="Caffe Americano">Caffe Americano</option>
+          <option value="Caffe Mocha">Caffe Mocha</option>
+          <option value="Espresso">Espresso</option>
+          <option value="Cappuccino">Cappuccino</option>
+        </select> 
+    </div>                   
+    <div align="center">
+        <label for="milk">Select Milk:</label>
+        <select name="milk" id="milk">
+          <option value="Whole Milk">Whole Milk</option>
+          <option value="2% Milk">2% Milk</option>
+          <option value="Nonfat Milk">Nonfat Milk</option>
+          <option value="Almond Milk">Almond Milk</option>
+          <option value="Soy Milk">Soy Milk</option>
+        </select> 
+    </div>                   
+    <div align="center">
+        <label for="size">Select Size</label>
+        <select name="size" id="size"> 
+          <option value="Short">Short</option>
+          <option value="Tall">Tall</option>
+          <option value="Grande">Grande</option>
+          <option value="Venti">Venti</option>
+        </select> 
+    </div>                   
     <br/>
 
     <p align="center"><img src="/images/starbucks.jpg"></p>

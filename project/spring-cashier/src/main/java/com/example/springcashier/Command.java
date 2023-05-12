@@ -11,6 +11,9 @@ class Command {
     private String action ;
     private String message ;
     private String stores ;
+    private String drink;
+    private String milk;
+    private String size;
     private String register ; 
     private String timestamp ;
     private String hash ;

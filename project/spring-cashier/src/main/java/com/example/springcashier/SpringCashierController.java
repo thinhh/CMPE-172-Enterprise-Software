@@ -50,7 +50,7 @@ public class SpringCashierController {
         return "user/starbucks" ;
 
     }
-     public static Order GetNewOrder() {
+    /** public static Order GetNewOrder() {
         Order o = new Order();
         int x;
         String [] DRINK_OPTIONS = {"Caffe Latte", "Caffe Americano", "Caffe Mocha", "Espresso", "Cappuccino"};
@@ -59,7 +59,7 @@ public class SpringCashierController {
         String [][] PRICE_TOTAL = {{"$2.95", "$3.65", "$3.95"}, {"$2.25", "$2.65", "$2.95"},{"$3.45", "$4.15", "$4.45"}, {"$1.75", "$1.95"}, {"$2.95", "$3.65", "$3.95"}};
         Random rand = new Random();
         int random_drink = rand.nextInt(DRINK_OPTIONS.length);
-        o.setDrink(DRINK_OPTIONS[random_drink]);
+        o.setDrink(command.getDrink());
         int random_milk = rand.nextInt(MILK_OPTIONS.length);
         o.setMilk(MILK_OPTIONS[random_milk]);
         int random_size;
@@ -73,7 +73,7 @@ public class SpringCashierController {
         o.setStatus("Ready for Payment");
         o.setTotal(PRICE_TOTAL[random_drink][random_size]);
         return o ;
-    }
+    }*/
 
 
     @PostMapping
@@ -89,8 +89,94 @@ public class SpringCashierController {
 
         /* Process Post Action */
         if ( action.equals("Place Order") ) {
-            Order order = GetNewOrder() ;
-            order.setRegister( command.getRegister() ) ;
+            Order order = new Order();
+            order.setRegister( command.getRegister()) ;
+            order.setDrink(command.getDrink());
+            order.setMilk(command.getMilk());
+            order.setSize(command.getSize());
+            order.setStatus("Ready for Payment");
+            String price = "0.0";
+            switch (order.getDrink()) {
+                case "Caffe Latte":
+                    switch (order.getSize()) {
+                        case "Tall":
+                            price = "2.95";
+                            break;
+                        case "Grande":
+                            price = "3.65";
+                            break;
+                        case "Venti":
+                        case "Your Own Cup":
+                            price = "3.95";
+                            break;
+                        default:
+                           order.setSize("Invalid Size");
+                    }
+                    break;
+                case "Caffe Americano":
+                    switch (order.getSize()) {
+                        case "Tall":
+                            price = "2.25";
+                            break;
+                        case "Grande":
+                            price = "2.65";
+                            break;
+                        case "Venti":
+                        case "Your Own Cup":
+                            price = "2.95";
+                            break;
+                        default:
+                           order.setSize("Invalid Size");
+                }
+                    break;
+                case "Caffe Mocha":
+                    switch (order.getSize()) {
+                        case "Tall":
+                            price = "3.45";
+                            break;
+                        case "Grande":
+                            price = "4.15";
+                            break;
+                        case "Venti":
+                        case "Your Own Cup":
+                            price = "4.45";
+                            break;
+                        default:
+                            order.setSize("Invalid Size");
+                }
+                    break;
+                case "Espresso":
+                    switch (order.getSize()) {
+                        case "Short":
+                            price = "1.75";
+                            break;
+                        case "Tall":
+                            price = "1.95";
+                            break;
+                        default:
+                            order.setSize("Invalid Size");
+                    }
+                    break;
+                case "Cappuccino":
+                    switch (order.getSize()) {
+                        case "Tall":
+                            price = "2.95";
+                            break;
+                        case "Grande":
+                            price = "3.65";
+                            break;
+                        case "Venti":
+                        case "Your Own Cup":
+                            price = "3.95";
+                            break;
+                        default:
+                            order.setSize("Invalid Size");
+                    }
+                    break;
+                default:
+                    order.setDrink("Invalid Drink");;
+        }
+            order.setTotal(price);
             message = "Starbucks Reserved Order" + "\n\n" +
                 "Drink: " + order.getDrink() + "\n" +
                 "Milk:  " + order.getMilk() + "\n" +
