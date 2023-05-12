@@ -14,6 +14,9 @@ Watched previous Starbuck Demos for reference
 ### 9:00AM to 12:00 am
 Worked on create new user and user login for spring-cashier. DONE
 Added new user into MYSQL. 
-### 12:00 am - 
+### 12:00 am - 1pm
 Work on creating drink options <br>
 Watched demos  
+### 6pm -12pm
+Finished working on drink option <br>
+Watching demos
