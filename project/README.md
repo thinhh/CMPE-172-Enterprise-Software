@@ -22,5 +22,5 @@ Finished working on drink option <br>
 Watching demos
 
 ## May 12, 2023
-Working on connecting Starbuck Cashier to API. In-progress
+Working on connecting Starbuck Cashier to API. In-progress <br>
 Working on checking KONG Connectivity. In-progress
