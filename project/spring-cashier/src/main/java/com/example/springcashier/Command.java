@@ -15,6 +15,8 @@ class Command {
     private String milk;
     private String size;
     private String register ; 
+    private String cardnum ;
+    private String cardcode ;
     private String timestamp ;
     private String hash ;
 }

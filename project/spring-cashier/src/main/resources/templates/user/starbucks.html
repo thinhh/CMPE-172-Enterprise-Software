@@ -189,11 +189,29 @@
     <br/>
 
     <p align="center">
+
+        <input type="submit" name="action" id="ping" value="PING">
+        &nbsp;&nbsp;&nbsp;
+        <input type="submit" name="action" id="neworder" value="NEW ORDER">
+        &nbsp;&nbsp;&nbsp;
         <input type="submit" name="action" id="btnGetOrder" value="Get Order">
         &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="submit" name="action" id="btnPlaceOrder" value="Place Order">
         &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="action" id="newcard" value="NEW CARD">
+        &nbsp;&nbsp;&nbsp;
+        <input type="submit" name="action" id="activate" value="ACTIVATE CARD">
+        &nbsp;Card #:&nbsp;
+        <input type="text" id="cardnum" th:field="*{cardnum}"/>
+        &nbsp;Card Code:&nbsp;
+        <input type="text" id="cardcode" th:field="*{cardcode}"/>
+        &nbsp;&nbsp;&nbsp;
+       
+        <input type="submit" name="action" id="pay" value="PAY"> 
+        &nbsp;&nbsp;&nbsp;
         <input type="submit" name="action" id="btnClearOrder" value="Clear Order">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
     </p>
 
 </form>
