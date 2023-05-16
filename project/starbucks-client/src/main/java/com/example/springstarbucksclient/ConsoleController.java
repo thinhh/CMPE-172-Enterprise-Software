@@ -62,7 +62,7 @@ public class ConsoleController {
 
         if (action.equals("PING")) {
             message = "PING";
-            resourceUrl = "http://"+API_HOST+"/ping?apikey="+API_KEY;
+            resourceUrl = "http://"+API_HOST+"/ping";
             System.out.println(resourceUrl);
             // get response as string
             ResponseEntity<String> stringResponse = restTemplate.getForEntity(resourceUrl, String.class, API_KEY );

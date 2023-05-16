@@ -24,3 +24,7 @@ Watching demos
 ## May 12, 2023
 Working on connecting Starbuck Cashier to API. In-progress <br>
 Working on checking KONG Connectivity. In-progress
+ 
+## May 15, 2023
+Added error page for HTTP Bad Request
+Added NEW ORDER, NEW CARD, ACTIVE CARD, PAY Feature

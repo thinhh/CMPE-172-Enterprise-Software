@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.springcashier.model.Card;
 import com.example.springcashier.model.Ping;
+import com.example.springcashier.model.Order;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpEntity;
@@ -32,6 +33,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Random;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Slf4j
 @Controller
 @RequestMapping("/user/starbucks")
@@ -40,8 +44,7 @@ public class SpringCashierController {
     @Value("${starbucks.client.apikey}") String API_KEY ;
     @Value("${starbucks.client.apihost}") String API_HOST ;
     @Value("${starbucks.client.register}") String REGISTER ;
-    @Autowired
-    private OrderRepository orderRepository;
+    
 
     @GetMapping
     public String getAction( @ModelAttribute("command") Command command, 
@@ -148,108 +151,68 @@ public class SpringCashierController {
                 System.out.println( jsonString) ;
                 message = "\n" + jsonString ;
             }
-            catch ( Exception e ) {}
+            catch ( Exception e ) { return "user/starbucks";}
         }
         /* Process Post Action */
         if ( action.equals("Place Order") ) {
-            Order order = new Order();
-            order.setRegister( command.getRegister()) ;
-            order.setDrink(command.getDrink());
-            order.setMilk(command.getMilk());
-            order.setSize(command.getSize());
-            order.setStatus("Ready for Payment");
-            String price = "0.0";
-            switch (order.getDrink()) {
-                case "Caffe Latte":
-                    switch (order.getSize()) {
-                        case "Tall":
-                            price = "2.95";
-                            break;
-                        case "Grande":
-                            price = "3.65";
-                            break;
-                        case "Venti":
-                        case "Your Own Cup":
-                            price = "3.95";
-                            break;
-                        default:
-                           order.setSize("Invalid Size");
-                    }
-                    break;
-                case "Caffe Americano":
-                    switch (order.getSize()) {
-                        case "Tall":
-                            price = "2.25";
-                            break;
-                        case "Grande":
-                            price = "2.65";
-                            break;
-                        case "Venti":
-                        case "Your Own Cup":
-                            price = "2.95";
-                            break;
-                        default:
-                           order.setSize("Invalid Size");
-                }
-                    break;
-                case "Caffe Mocha":
-                    switch (order.getSize()) {
-                        case "Tall":
-                            price = "3.45";
-                            break;
-                        case "Grande":
-                            price = "4.15";
-                            break;
-                        case "Venti":
-                        case "Your Own Cup":
-                            price = "4.45";
-                            break;
-                        default:
-                            order.setSize("Invalid Size");
-                }
-                    break;
-                case "Espresso":
-                    switch (order.getSize()) {
-                        case "Short":
-                            price = "1.75";
-                            break;
-                        case "Tall":
-                            price = "1.95";
-                            break;
-                        default:
-                            order.setSize("Invalid Size");
-                    }
-                    break;
-                case "Cappuccino":
-                    switch (order.getSize()) {
-                        case "Tall":
-                            price = "2.95";
-                            break;
-                        case "Grande":
-                            price = "3.65";
-                            break;
-                        case "Venti":
-                        case "Your Own Cup":
-                            price = "3.95";
-                            break;
-                        default:
-                            order.setSize("Invalid Size");
-                    }
-                    break;
-                default:
-                    order.setDrink("Invalid Drink");;
-        }
-            order.setTotal(price);
-            message = "Starbucks Reserved Order" + "\n\n" +
-                "Drink: " + order.getDrink() + "\n" +
-                "Milk:  " + order.getMilk() + "\n" +
-                "Size:  " + order.getSize() + "\n" +
-                "Total: " + order.getTotal() + "\n" +
-                "\n" +
-                "Register: " + order.getRegister() + "\n" +
-                "Status:   " + order.getStatus() + "\n" ;
-            orderRepository.save(order);
+            resourceUrl = "http://"+API_HOST+"/order/register/"+REGISTER;
+            Order orderRequest = new Order();
+            orderRequest.setRegister(command.getRegister()) ;
+            orderRequest.setDrink(command.getDrink());
+            orderRequest.setMilk(command.getMilk());
+            orderRequest.setSize(command.getSize());
+            HttpEntity<Order> newOrderRequest = new HttpEntity<Order>(orderRequest,headers) ;
+            ResponseEntity<Order> newOrderResponse = restTemplate.postForEntity(resourceUrl, newOrderRequest, Order.class);
+            Order newOrder = newOrderResponse.getBody();
+            System.out.println( newOrder );
+            // pretty print JSON
+            try {
+              ObjectMapper objectMapper = new ObjectMapper() ;
+                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(newOrder);
+                System.out.println( jsonString) ;
+                message = "\n" + jsonString ;
+            }
+            
+            catch (Exception e) {}
 
+        }
+        if (action.equals("ACTIVATE CARD")) {
+            message = "";
+            resourceUrl = "http://"+API_HOST+"/card/activate/"+command.getCardnum()+"/"+command.getCardcode();
+            // get response as POJO
+            String emptyRequest = "" ;
+            HttpEntity<String> newCardRequest = new HttpEntity<String>(emptyRequest,headers) ;
+            ResponseEntity<Card> newCardResponse = restTemplate.postForEntity(resourceUrl, newCardRequest, Card.class);
+            Card newCard = newCardResponse.getBody();
+            System.out.println( newCard );
+            // pretty print JSON
+            try {
+                ObjectMapper objectMapper = new ObjectMapper() ;
+                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(newCard);
+                System.out.println( jsonString) ;
+                message = "\n" + jsonString ;
+            }
+            catch ( Exception e ) {}
+        }
+
+        if (action.equals("PAY")) {
+            message = "";
+            resourceUrl = "http://"+API_HOST+"/order/register/5012349/pay/"+command.getCardnum() ;
+            System.out.println(resourceUrl) ;
+            // get response as POJO
+            String emptyRequest = "" ;
+            HttpEntity<String> paymentRequest = new HttpEntity<String>(emptyRequest,headers) ;
+            ResponseEntity<Card> payForOrderResponse = restTemplate.postForEntity(resourceUrl, paymentRequest, Card.class);
+            Card orderPaid = payForOrderResponse.getBody();
+            System.out.println( orderPaid );
+            // pretty print JSON
+            try {
+                ObjectMapper objectMapper = new ObjectMapper() ;
+                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderPaid);
+                System.out.println( jsonString) ;
+                message = "\n" + jsonString ;
+            }
+            catch ( Exception e ) {}
         }
         else if ( action.equals("Get Order") ) {
             message = "Starbucks Reserved Order" + "\n\n" +
