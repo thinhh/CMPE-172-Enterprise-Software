@@ -154,10 +154,10 @@ public class SpringCashierController {
             catch ( Exception e ) { return "user/starbucks";}
         }
         /* Process Post Action */
-        if ( action.equals("Place Order") ) {
-            resourceUrl = "http://"+API_HOST+"/order/register/"+REGISTER;
+        if ( action.equals("PLACE ORDER") ) {
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister();
             Order orderRequest = new Order();
-            orderRequest.setRegister(command.getRegister()) ;
+            orderRequest.setRegister(command.getRegister());
             orderRequest.setDrink(command.getDrink());
             orderRequest.setMilk(command.getMilk());
             orderRequest.setSize(command.getSize());
@@ -197,7 +197,7 @@ public class SpringCashierController {
 
         if (action.equals("PAY")) {
             message = "";
-            resourceUrl = "http://"+API_HOST+"/order/register/5012349/pay/"+command.getCardnum() ;
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister()+ "/pay/"+command.getCardnum() ;
             System.out.println(resourceUrl) ;
             // get response as POJO
             String emptyRequest = "" ;
@@ -214,12 +214,24 @@ public class SpringCashierController {
             }
             catch ( Exception e ) {}
         }
-        else if ( action.equals("Get Order") ) {
-            message = "Starbucks Reserved Order" + "\n\n" +
-                "Register: " + command.getRegister() + "\n" +
-                "Status:   " + "Ready for New Order"+ "\n" ;            
+        
+        else if ( action.equals("GET ORDER") ) {
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister();
+            ResponseEntity<Order> getOrderResponse = restTemplate.getForEntity(resourceUrl, Order.class);
+            Order getOrder = getOrderResponse.getBody();
+            System.out.println( getOrder );
+            // pretty print JSON
+            try {
+              ObjectMapper objectMapper = new ObjectMapper() ;
+                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(getOrder);
+                System.out.println( jsonString) ;
+                message = "\n" + jsonString ;
+            }
+            
+            catch (Exception e) {}
+
         } 
-        else if ( action.equals("Clear Order") ) {
+        else if ( action.equals("CLEAR ORDER") ) {
             message = "Starbucks Reserved Order" + "\n\n" +
                 "Register: " + command.getRegister() + "\n" +
                 "Status:   " + "Ready for New Order"+ "\n" ;            
