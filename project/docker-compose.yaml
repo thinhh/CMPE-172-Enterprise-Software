@@ -7,11 +7,16 @@ services:
     platform: linux/amd64
     depends_on:
     - kong
+    - mysql
     ports:
     - "8081:8081"    
     networks:
       - network     
     environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "root"
+      MYSQL_PASS: "cmpe172"
+      MYSQL_SCHEMA: "starbucks"
       API_KEY: "2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ"      
       API_HOST: "kong:8000/api"      
       REGISTER: "5012349"      

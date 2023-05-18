@@ -49,7 +49,7 @@ jumpbox-shell:
 # Docker
 
 docker-build: build
-	docker build --platform=linux/amd64 -t spring-cashier .
+	docker build --platform=linux/amd64 -t spring-starbucks-client .
 	docker images
 
 cashier-network:

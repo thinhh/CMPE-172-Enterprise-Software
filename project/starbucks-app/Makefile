@@ -28,7 +28,7 @@ run: build
 
 run-spring: build
 	java -cp build/libs/starbucks-all.jar \
-		-Dapiurl="http://localhost:8080" \
+		-Dapiurl="http://localhost:80/api" \
 		-Dapikey="2742a237475c4703841a2bf906531eb0" \
 		-Dregister="5012349" \
 		starbucks.Main 2>debug.log

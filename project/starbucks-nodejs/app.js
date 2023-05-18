@@ -8,7 +8,7 @@ Starbucks Reserved | Cachier's App
 // Node.js Environment Settings
 
 //var api_endpoint    =  (process.env.api_endpoint    || "http://localhost:8080/starbucks"    ) ;
-var api_endpoint    =  (process.env.api_endpoint    || "http://localhost:8080"              ) ;
+var api_endpoint    =  (process.env.api_endpoint    || "http://localhost:80"              ) ;
 var api_key         =  (process.env.api_key         || "2742a237475c4703841a2bf906531eb0"   ) ;
 var secret_key      =  (process.env.secret_key      || "kwRg54x2Go9iEdl49jFENRM12Mp711QI"   ) ;
 var register_id     =  (process.env.register_id     || "5012349" ) ; // default to Dub-C Store

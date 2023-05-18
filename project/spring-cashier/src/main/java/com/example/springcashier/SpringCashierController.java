@@ -1,5 +1,4 @@
 package com.example.springcashier;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.springcashier.model.Card;
 import com.example.springcashier.model.Ping;
@@ -36,6 +35,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Slf4j
 @Controller
 @RequestMapping("/user/starbucks")
@@ -71,32 +72,6 @@ public class SpringCashierController {
         return "user/starbucks" ;
 
     }
-    /** public static Order GetNewOrder() {
-        Order o = new Order();
-        int x;
-        String [] DRINK_OPTIONS = {"Caffe Latte", "Caffe Americano", "Caffe Mocha", "Espresso", "Cappuccino"};
-        String [] MILK_OPTIONS  = {"Whole Milk", "2% Milk", "Nonfat Milk", "Almond Milk", "Soy Milk"};
-        String [][] SIZE_OPTIONS  = { {"Tall", "Grande", "Venti"}, {"Tall", "Grande", "Venti"}, {"Tall", "Grande", "Venti"}, {"Short", "Tall"}, {"Tall", "Grande", "Venti"}};
-        String [][] PRICE_TOTAL = {{"$2.95", "$3.65", "$3.95"}, {"$2.25", "$2.65", "$2.95"},{"$3.45", "$4.15", "$4.45"}, {"$1.75", "$1.95"}, {"$2.95", "$3.65", "$3.95"}};
-        Random rand = new Random();
-        int random_drink = rand.nextInt(DRINK_OPTIONS.length);
-        o.setDrink(command.getDrink());
-        int random_milk = rand.nextInt(MILK_OPTIONS.length);
-        o.setMilk(MILK_OPTIONS[random_milk]);
-        int random_size;
-        if (o.getDrink() != "Espresso"){
-            random_size = rand.nextInt(3);
-        }
-        else {
-            random_size= rand.nextInt(2);
-        }
-        o.setSize(SIZE_OPTIONS[random_drink][random_size]);
-        o.setStatus("Ready for Payment");
-        o.setTotal(PRICE_TOTAL[random_drink][random_size]);
-        return o ;
-    }*/
-
-
     @PostMapping
     public String postAction(@Valid @ModelAttribute("command") Command command,  
                             @RequestParam(value="action", required=true) String action,
@@ -115,7 +90,7 @@ public class SpringCashierController {
 
          if (action.equals("PING")) {
             message = "PING";
-            resourceUrl = "http://"+API_HOST+"/ping";
+            resourceUrl = "http://"+API_HOST+"/ping?apikey="+API_KEY;
             System.out.println(resourceUrl);
             // get response as string
             ResponseEntity<String> stringResponse = restTemplate.getForEntity(resourceUrl, String.class, API_KEY );
@@ -137,7 +112,7 @@ public class SpringCashierController {
 
         if (action.equals("NEW CARD")) {
             message = "";
-            resourceUrl = "http://"+API_HOST+"/cards";
+            resourceUrl = "http://"+API_HOST+"/cards?apikey="+API_KEY;
             // get response as POJO
             String emptyRequest = "" ;
             HttpEntity<String> newCardRequest = new HttpEntity<String>(emptyRequest, headers) ;
@@ -151,11 +126,12 @@ public class SpringCashierController {
                 System.out.println( jsonString) ;
                 message = "\n" + jsonString ;
             }
-            catch ( Exception e ) { return "user/starbucks";}
+            catch ( Exception e ) {}
         }
+
         /* Process Post Action */
         if ( action.equals("PLACE ORDER") ) {
-            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister();
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister()+"?apikey="+API_KEY;
             Order orderRequest = new Order();
             orderRequest.setRegister(command.getRegister());
             orderRequest.setDrink(command.getDrink());
@@ -178,7 +154,7 @@ public class SpringCashierController {
         }
         if (action.equals("ACTIVATE CARD")) {
             message = "";
-            resourceUrl = "http://"+API_HOST+"/card/activate/"+command.getCardnum()+"/"+command.getCardcode();
+            resourceUrl = "http://"+API_HOST+"/card/activate/"+command.getCardnum()+"/"+command.getCardcode()+"?apikey="+API_KEY;
             // get response as POJO
             String emptyRequest = "" ;
             HttpEntity<String> newCardRequest = new HttpEntity<String>(emptyRequest,headers) ;
@@ -197,7 +173,7 @@ public class SpringCashierController {
 
         if (action.equals("PAY")) {
             message = "";
-            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister()+ "/pay/"+command.getCardnum() ;
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister()+ "/pay/"+command.getCardnum()+"?apikey="+API_KEY; 
             System.out.println(resourceUrl) ;
             // get response as POJO
             String emptyRequest = "" ;
@@ -216,7 +192,7 @@ public class SpringCashierController {
         }
         
         else if ( action.equals("GET ORDER") ) {
-            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister();
+            resourceUrl = "http://"+API_HOST+"/order/register/"+command.getRegister()+"?apikey="+API_KEY;;
             ResponseEntity<Order> getOrderResponse = restTemplate.getForEntity(resourceUrl, Order.class);
             Order getOrder = getOrderResponse.getBody();
             System.out.println( getOrder );
