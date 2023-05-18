@@ -30,10 +30,14 @@ Added error page for HTTP Bad Request <br>
 Added NEW ORDER, NEW CARD, ACTIVE CARD, PAY Feature
 
 ## May 17, 2023
-added Kong API on Docker Compose and Check Connectivity
+added Kong API on Docker Compose and Check Connectivity <br>
 Watched video for RabbitMQ and GKE demo
 
-# LocalHost Screenshot
+## May 18, 2023
+Kong API connection on Compose (Done) <br>
+Adding RabbitMQ dependency and adding Starbuck Worker <br>
+Working on creating the Astah Architectural Design
+
 
 # Docker Container Screenshot
 
