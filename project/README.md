@@ -26,5 +26,16 @@ Working on connecting Starbuck Cashier to API. In-progress <br>
 Working on checking KONG Connectivity. In-progress
  
 ## May 15, 2023
-Added error page for HTTP Bad Request
+Added error page for HTTP Bad Request <br>
 Added NEW ORDER, NEW CARD, ACTIVE CARD, PAY Feature
+
+## May 17, 2023
+added Kong API on Docker Compose and Check Connectivity
+Watched video for RabbitMQ and GKE demo
+
+# LocalHost Screenshot
+
+# Docker Container Screenshot
+
+# GKE Screenshot
+
