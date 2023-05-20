@@ -2,12 +2,23 @@
 version: "3"
 
 services:
+  rabbit:
+    image: rabbitmq:3-management
+    platform: linux/amd64
+    ports:
+      - "9090:15672"
+      - "4369:4369"
+      - "5672:5672"
+    networks:
+      - network  
+    restart: always 
   starbucks-client:
     image: spring-starbucks-client
     platform: linux/amd64
     depends_on:
     - kong
     - mysql
+    - rabbit
     ports:
     - "8081:8081"    
     networks:
@@ -19,8 +30,28 @@ services:
       MYSQL_SCHEMA: "starbucks"
       API_KEY: "2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ"      
       API_HOST: "kong:8000/api"      
-      REGISTER: "5012349"      
+      REGISTER: "5012349"   
+      RABBIT_HOST: "rabbit"
+      RABBIT_USERNAME: "guest"
+      RABBIT_PASSWORD: "guest"   
     restart: always  
+  worker:
+    image: spring-starbucks-worker
+    platform: linux/amd64
+    depends_on:
+      - mysql
+      - rabbit
+    networks:
+      - network
+    environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "root"
+      MYSQL_PASS: "cmpe172"
+      MYSQL_SCHEMA: "starbucks"
+      RABBIT_HOST: "rabbit"
+      RABBIT_USERNAME: "guest"
+      RABBIT_PASSWORD: "guest"
+    restart: always
   kong:
     image: kong:2.4.0
     platform: linux/amd64

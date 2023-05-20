@@ -211,7 +211,7 @@ public class SpringCashierController {
             Order getOrder = getOrderResponse.getBody();
             System.out.println( getOrder );
             Order makeOrder = new Order();
-            String orderNumber = UUID.randomUUID().toString();
+            String orderNumber = getOrder.getOrderNumber();
             makeOrder.setRegister(getOrder.getRegister());
             makeOrder.setOrderNumber( orderNumber);
             makeOrder.setDrink(getOrder.getDrink());

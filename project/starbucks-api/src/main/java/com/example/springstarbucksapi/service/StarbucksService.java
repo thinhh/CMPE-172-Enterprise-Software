@@ -14,7 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-
+import java.util.UUID;
 @Service("StarbucksService")
 public class StarbucksService {
 
@@ -94,6 +94,8 @@ public class StarbucksService {
         }
         // set price
         double price = 0.0;
+        String orderNumber = UUID.randomUUID().toString();
+        order.setOrderNumber(orderNumber);
         switch (order.getDrink()) {
             case "Caffe Latte":
                 switch (order.getSize()) {

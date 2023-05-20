@@ -38,6 +38,8 @@ public class StarbucksOrder {
     private String milk;
     @Column(nullable = false)
     private String size;
+    @Column(nullable = false)
+    private String orderNumber;
     private double total;
     private String status;
     private String register;

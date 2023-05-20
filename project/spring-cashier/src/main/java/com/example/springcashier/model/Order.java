@@ -3,7 +3,7 @@ package com.example.springcashier.model;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -17,9 +17,10 @@ import javax.persistence.Table;
 @Data
 @RequiredArgsConstructor
 public class Order {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+   private @Id
+    @GeneratedValue
+    @JsonIgnore  /* https://www.baeldung.com/jackson-ignore-properties-on-serialization */
+    Long id;
     
     @Column(nullable=false)
     private String orderNumber;
