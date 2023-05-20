@@ -1,4 +1,4 @@
-package com.example.springcashier.model;
+package com.example.springcashierworker;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

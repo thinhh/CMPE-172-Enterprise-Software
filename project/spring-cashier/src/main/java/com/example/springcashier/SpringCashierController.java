@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
+import java.util.UUID;
+
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -35,6 +38,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.HashMap;
 import java.util.Map;
 
+
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Slf4j
@@ -45,7 +51,15 @@ public class SpringCashierController {
     @Value("${starbucks.client.apikey}") String API_KEY ;
     @Value("${starbucks.client.apihost}") String API_HOST ;
     @Value("${starbucks.client.register}") String REGISTER ;
-    
+     
+    @Autowired
+    private RabbitTemplate rabbit;
+
+    @Autowired
+    private Queue queue;    
+
+    @Autowired
+    private OrderRepository orders;
 
     @GetMapping
     public String getAction( @ModelAttribute("command") Command command, 
@@ -196,6 +210,18 @@ public class SpringCashierController {
             ResponseEntity<Order> getOrderResponse = restTemplate.getForEntity(resourceUrl, Order.class);
             Order getOrder = getOrderResponse.getBody();
             System.out.println( getOrder );
+            Order makeOrder = new Order();
+            String orderNumber = UUID.randomUUID().toString();
+            makeOrder.setRegister(getOrder.getRegister());
+            makeOrder.setOrderNumber( orderNumber);
+            makeOrder.setDrink(getOrder.getDrink());
+            makeOrder.setMilk(getOrder.getMilk());
+            makeOrder.setSize(getOrder.getSize());
+            makeOrder.setStatus("PAID");
+
+            orders.save(makeOrder);
+            rabbit.convertAndSend(queue.getName(), orderNumber);
+
             // pretty print JSON
             try {
               ObjectMapper objectMapper = new ObjectMapper() ;
