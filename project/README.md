@@ -37,6 +37,9 @@ Watched video for RabbitMQ and GKE demo
 Kong API connection on Compose (Done) <br>
 Adding RabbitMQ dependency and adding Starbuck Worker <br>
 Working on creating the Astah Architectural Design
+Added RabbitMQ sender (DONE) <br>
+Added "PAID" order into a "order_drink" MYSQL <br>
+Working on RabbitMQ worker <br>
 
 
 # Docker Container Screenshot
