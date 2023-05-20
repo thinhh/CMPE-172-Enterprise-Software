@@ -115,11 +115,8 @@ public class SpringCashierController {
             System.out.println( pingMsg );
             // pretty print JSON
             try {
-                ObjectMapper objectMapper = new ObjectMapper() ;
-                Object object = objectMapper.readValue(message, Object.class);
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
-                System.out.println(jsonString) ;
-                message = "\n" + jsonString ;
+                message = "Starbucks Reserved Order" + "\n\n" +
+                "test: " + pingMsg.getTest() + "\n";
             }
             catch ( Exception e ) {}
         }
@@ -135,10 +132,13 @@ public class SpringCashierController {
             System.out.println( newCard );
             // pretty print JSON
             try {
-                ObjectMapper objectMapper = new ObjectMapper() ;
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(newCard);
-                System.out.println( jsonString) ;
-                message = "\n" + jsonString ;
+                message = "\n" + "Starbucks Reserved Order" + "\n\n" +
+                "Card Number: " + newCard.getCardNumber() + "\n" +
+                "Card Code: " + newCard.getCardCode() + "\n" +
+                "Balance: " + newCard.getBalance() + "\n" +
+                "Activated: " + newCard.isActivated() + "\n" +
+                "Status: " + newCard.getStatus() + "\n";
+
             }
             catch ( Exception e ) {}
         }
@@ -157,10 +157,15 @@ public class SpringCashierController {
             System.out.println( newOrder );
             // pretty print JSON
             try {
-              ObjectMapper objectMapper = new ObjectMapper() ;
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(newOrder);
-                System.out.println( jsonString) ;
-                message = "\n" + jsonString ;
+
+                message = "\n" + "Starbucks Reserved Order" + "\n\n" +
+                "Order Number: " + newOrder.getOrderNumber() + "\n" +
+                "Drink: " + newOrder.getDrink() + "\n" +
+                "Milk: " + newOrder.getMilk() + "\n" +
+                "Size: " + newOrder.getSize() + "\n" +
+                "Register: " + newOrder.getRegister() + "\n" +
+                "Status: " + newOrder.getStatus() + "\n" +
+                "Total: " + newOrder.getTotal() + "\n";
             }
             
             catch (Exception e) {}
@@ -177,10 +182,13 @@ public class SpringCashierController {
             System.out.println( newCard );
             // pretty print JSON
             try {
-                ObjectMapper objectMapper = new ObjectMapper() ;
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(newCard);
-                System.out.println( jsonString) ;
-                message = "\n" + jsonString ;
+                message = "\n" + "Starbucks Reserved Order" + "\n\n" +
+                "Card Number: " + newCard.getCardNumber() + "\n" +
+                "Card Code: " + newCard.getCardCode() + "\n" +
+                "Balance: " + newCard.getBalance() + "\n" +
+                "Activated: " + newCard.isActivated() + "\n" +
+                "Status: " + newCard.getStatus() + "\n";
+
             }
             catch ( Exception e ) {}
         }
@@ -197,10 +205,12 @@ public class SpringCashierController {
             System.out.println( orderPaid );
             // pretty print JSON
             try {
-                ObjectMapper objectMapper = new ObjectMapper() ;
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderPaid);
-                System.out.println( jsonString) ;
-                message = "\n" + jsonString ;
+                 message = "\n" + "Starbucks Reserved Order" + "\n\n" +
+                "Card Number: " + orderPaid.getCardNumber() + "\n" +
+                "Card Code: " + orderPaid.getCardCode() + "\n" +
+                "Balance: " + orderPaid.getBalance() + "\n" +
+                "Activated: " + orderPaid.isActivated() + "\n" +
+                "Status: " + orderPaid.getStatus() + "\n";
             }
             catch ( Exception e ) {}
         }
@@ -218,16 +228,20 @@ public class SpringCashierController {
             makeOrder.setMilk(getOrder.getMilk());
             makeOrder.setSize(getOrder.getSize());
             makeOrder.setStatus("PAID");
-
+            makeOrder.setTotal(getOrder.getTotal());
             orders.save(makeOrder);
             rabbit.convertAndSend(queue.getName(), orderNumber);
 
             // pretty print JSON
             try {
-              ObjectMapper objectMapper = new ObjectMapper() ;
-                String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(getOrder);
-                System.out.println( jsonString) ;
-                message = "\n" + jsonString ;
+               message = "\n" + "Starbucks Reserved Order" + "\n\n" +
+                "Order Number: " + makeOrder.getOrderNumber() + "\n" +
+                "Drink: " + makeOrder.getDrink() + "\n" +
+                "Milk: " + makeOrder.getMilk() + "\n" +
+                "Size: " + makeOrder.getSize() + "\n" +
+                "Register: " + makeOrder.getRegister() + "\n" +
+                "Status: " + makeOrder.getStatus() + "\n" +
+                "Total: " + makeOrder.getTotal() + "\n";
             }
             
             catch (Exception e) {}

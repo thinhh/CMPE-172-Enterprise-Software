@@ -19,4 +19,8 @@ public class Card {
     private double balance ;
     private boolean activated ;
     private String status ;
+
+    public boolean isActivated() {
+        return activated == true;
+}
 }
