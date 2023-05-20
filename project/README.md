@@ -41,8 +41,17 @@ Added RabbitMQ sender (DONE) <br>
 Added "PAID" order into a "order_drink" MYSQL <br>
 Working on RabbitMQ worker <br>
 
+## May 19, 2023
+Finished Architecture Diagram (DOME) <br>
+Finished Docker Compose (DONE) <br>
+Finished adding workers and RabbitMQ to DockerCompose (DONE) <br>
+Docker Compose Stack worked as intended (DONE) <br>
+Working on Deployment for GKE and watch demo for GKE Deployment <br>
 
-# Docker Container Screenshot
+# Starbucks Architecture On Docker Compose
+![architecture](./images/architecture-diagram.png)
+# Docker Compose Container Screenshot
 
 # GKE Screenshot
 
+# Starbucks Workflow
