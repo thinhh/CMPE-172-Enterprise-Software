@@ -49,7 +49,7 @@ Docker Compose Stack worked as intended (DONE) <br>
 Working on Deployment for GKE and watch demo for GKE Deployment <br>
 
 # Starbucks Architecture On Docker Compose
-![architecture](./images/architecture-diagram.png)
+![architecture](./image/architecture-diagram.png)
 # Docker Compose Container Screenshot
 
 # GKE Screenshot
