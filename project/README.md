@@ -48,6 +48,10 @@ Finished adding workers and RabbitMQ to DockerCompose (DONE) <br>
 Docker Compose Stack worked as intended (DONE) <br>
 Working on Deployment for GKE and watch demo for GKE Deployment <br>
 
+## May 20, 2023
+Docker Containerize Spring-Cashier, Spring-API, Spring-Cahsier-Worker
+Created MYSQL Cloud
+
 # Starbucks Architecture On Docker Compose
 ![architecture](./image/architecture-diagram.png)
 # Docker Compose Container Screenshot
