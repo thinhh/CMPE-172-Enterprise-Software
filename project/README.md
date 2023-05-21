@@ -52,10 +52,12 @@ Working on Deployment for GKE and watch demo for GKE Deployment <br>
 Docker Containerize Spring-Cashier, Spring-API, Spring-Cahsier-Worker
 Created MYSQL Cloud
 
+## May 21, 2023
+Project Deployed on Kubernet (DONE) <br>
+Working on the Report/Journal
 # Starbucks Architecture On Docker Compose
 ![architecture](./image/architecture-diagram.png)
-# Docker Compose Container Screenshot
-
+![GKE](./image/gke-architecture.jpg)
 # GKE Screenshot
 
 # Starbucks Workflow
