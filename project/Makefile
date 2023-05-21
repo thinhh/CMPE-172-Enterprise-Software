@@ -13,7 +13,7 @@ cashier-nodejs-run:
 
 starbucks-app-run: 
 	java -cp starbucks-app.jar \
-		-Dapiurl="http://localhost:80/api" \
+		-Dapiurl="http://35.226.99.230/api" \
 		-Dapikey="2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ" \
 		-Dregister="5012349" \
 		starbucks.Main 2>debug.log
