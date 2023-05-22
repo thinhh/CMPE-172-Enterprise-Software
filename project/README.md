@@ -125,6 +125,9 @@ I am only highlight the important changes but the rest of the source code change
 ![rabbit](./image/rabbitmq.png)
 ![logs](./image/worker-log.png)
 
+![rabbit-2](./image/rabbit-2.png)
+![mysql-2](./image/mysql-order-drink-2.png)
+![log-2](./image/worker-log-2.png)
 ## Mobile App Kong Connection
 - Kong Connection - Moible App should be connected to Starbucks API via Kong using API key (demo'ed during startup of Mobile App) (10 points)
 - Kong Connection - Cashier's App and other Apps in Demo must connect to Starbucks API via Kong using API Key (5 points)
