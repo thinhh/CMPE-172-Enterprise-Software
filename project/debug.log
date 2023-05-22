@@ -1,7 +1,7 @@
-{"balance":20,"cardCode":"380","cardNumber":"315505175","activated":false,"status":"New Card"}
-New Card: 315505175[380] Balance: 20.0
+{"balance":20,"cardCode":"132","cardNumber":"175953947","activated":false,"status":"New Card"}
+New Card: 175953947[132] Balance: 20.0
 Status: 200 
-{"balance":20,"cardCode":"380","cardNumber":"315505175","activated":true,"status":"New Card"}
+{"balance":20,"cardCode":"132","cardNumber":"175953947","activated":true,"status":"New Card"}
 ============================================
 --------- D E V I C E  S T A T E  ----------
 ============================================
@@ -9,14 +9,14 @@ Pin Option    = 4
 Stored Pin    = 1234
 Authenticated = false
 Orientation   = PORTRAIT
-API URL       = http://localhost:80/api
+API URL       = http://35.226.99.230/api
 API KEY       = 2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ
 API Register  = 5012349
 ============================================
 Screen: starbucks.Passcode
 Screen: starbucks.Spacer
 Screen: starbucks.KeyPad
-Value: [Ljava.lang.String;@67f639d3
+Value: [Ljava.lang.String;@54bff557
 KeyPad Touched at (1, 5)
 Key: 1
 Key: 1 Count: 1
@@ -28,7 +28,7 @@ D4 =
 Screen: starbucks.Passcode
 Screen: starbucks.Spacer
 Screen: starbucks.KeyPad
-Value: [Ljava.lang.String;@6253c26
+Value: [Ljava.lang.String;@593aaf41
 KeyPad Touched at (2, 5)
 Key: 2
 Key: 2 Count: 2
@@ -40,7 +40,7 @@ D4 =
 Screen: starbucks.Passcode
 Screen: starbucks.Spacer
 Screen: starbucks.KeyPad
-Value: [Ljava.lang.String;@49049a04
+Value: [Ljava.lang.String;@5a56cdac
 KeyPad Touched at (3, 5)
 Key: 3
 Key: 3 Count: 3
@@ -52,7 +52,7 @@ D4 =
 Screen: starbucks.Passcode
 Screen: starbucks.Spacer
 Screen: starbucks.KeyPad
-Value: [Ljava.lang.String;@71a8adcf
+Value: [Ljava.lang.String;@7c711375
 KeyPad Touched at (1, 6)
 Key: 4
 Key: 4 Count: 4
@@ -71,7 +71,7 @@ DEBUG: $20.00
 cnt1: 1
 pad1: 4
 ....
-DEBUG: [Ljava.lang.String;@791f145a 1
+DEBUG: [Ljava.lang.String;@783a467b 1
 line (before): $20.00 [len = 6]
 line (after):      $20.00 [pad = 5]
 cnt2: 5
@@ -95,258 +95,11 @@ pad2: 5
 13: 
 14: ===============
 15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@73e9cf30
 l: 10
 w: 15
 h: 15
-DEBUG: $20.00
-
-cnt1: 1
-pad1: 4
-....
-DEBUG: [Ljava.lang.String;@4b45a2f5 1
-line (before): $20.00 [len = 6]
-line (after):      $20.00 [pad = 5]
-cnt2: 5
-pad2: 5
-.....
-
-
-0: ===============
-1:    MyCards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7:      $20.00
-8: 
-9: 
-10: 
-11: 
-12: 
-13: 
-14: ===============
-15: [A][B][C][D][E]
-l: 10
-w: 15
-h: 15
-DEBUG: $20.00
-
-cnt1: 1
-pad1: 4
-....
-DEBUG: [Ljava.lang.String;@f09733f 1
-line (before): $20.00 [len = 6]
-line (after):      $20.00 [pad = 5]
-cnt2: 5
-pad2: 5
-.....
-
-
-0: ===============
-1:    MyCards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7:      $20.00
-8: 
-9: 
-10: 
-11: 
-12: 
-13: 
-14: ===============
-15: [A][B][C][D][E]
-l: 10
-w: 15
-h: 15
-DEBUG: $20.00
-
-cnt1: 1
-pad1: 4
-....
-DEBUG: [Ljava.lang.String;@e350b40 1
-line (before): $20.00 [len = 6]
-line (after):      $20.00 [pad = 5]
-cnt2: 5
-pad2: 5
-.....
-
-
-0: ===============
-1:    MyCards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7:      $20.00
-8: 
-9: 
-10: 
-11: 
-12: 
-13: 
-14: ===============
-15: [A][B][C][D][E]
-....
-....
-0: ===============
-1:    Payments
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7: Find Store
-8: Enable Payments
-9: 
-10: 
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-....
-....
-0: ===============
-1:    Rewards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7: Make Every
-8: Visit Count
-9: 
-10: 
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-.
-..
-0: ===============
-1:     Store
-2: ===============
-3: 
-4:          X
-5:    X
-6:        X
-7:       X
-8:   X
-9:            X
-10:   X
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-.
-..
-0: ===============
-1:     Store
-2: ===============
-3: 
-4:          X
-5:    X
-6:        X
-7:       X
-8:   X
-9:            X
-10:   X
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-.
-..
-0: ===============
-1:     Store
-2: ===============
-3: 
-4:          X
-5:    X
-6:        X
-7:       X
-8:   X
-9:            X
-10:   X
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-....
-....
-0: ===============
-1:    Rewards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7: Make Every
-8: Visit Count
-9: 
-10: 
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-....
-....
-0: ===============
-1:    Payments
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7: Find Store
-8: Enable Payments
-9: 
-10: 
-11: 
-12: 
-13: ===============
-14: [A][B][C][D][E]
-l: 10
-w: 15
-h: 15
-DEBUG: $20.00
-
-cnt1: 1
-pad1: 4
-....
-DEBUG: [Ljava.lang.String;@41a0aa7d 1
-line (before): $20.00 [len = 6]
-line (after):      $20.00 [pad = 5]
-cnt2: 5
-pad2: 5
-.....
-
-
-0: ===============
-1:    MyCards
-2: ===============
-3: 
-4: 
-5: 
-6: 
-7:      $20.00
-8: 
-9: 
-10: 
-11: 
-12: 
-13: 
-14: ===============
-15: [A][B][C][D][E]
-Value: [Ljava.lang.String;@2794eab6
-l: 10
-w: 15
-h: 15
-DEBUG: [315505175]
+DEBUG: [175953947]
 
 
 Scan Now
@@ -354,9 +107,9 @@ Scan Now
 cnt1: 4
 pad1: 3
 ...
-DEBUG: [Ljava.lang.String;@1c7696c6 4
-line (before): [315505175] [len = 11]
-line (after):   [315505175] [pad = 2]
+DEBUG: [Ljava.lang.String;@1ed6388a 4
+line (before): [175953947] [len = 11]
+line (after):   [175953947] [pad = 2]
 line (before):  [len = 0]
 line (after):          [pad = 8]
 line (before):  [len = 0]
@@ -374,7 +127,7 @@ pad2: 3
 3: 
 4: 
 5: 
-6:   [315505175]
+6:   [175953947]
 7:         
 8:         
 9:     Scan Now
@@ -384,13 +137,11 @@ pad2: 3
 13: 
 14: ===============
 15: [A][B][C][D][E]
-Value: [Ljava.lang.String;@60099951
-{"path":"/order/register/5012349/pay/315505175","error":"Bad Request","message":"Order Not Found!","timestamp":"2023-05-18T21:32:10.113+00:00","status":400}
-org.json.JSONException: JSONObject["balance"] not found.
+Value: [Ljava.lang.String;@5a45133e
 l: 10
 w: 15
 h: 15
-DEBUG: [315505175]
+DEBUG: [175953947]
 
 
 Scan Now
@@ -398,9 +149,9 @@ Scan Now
 cnt1: 4
 pad1: 3
 ...
-DEBUG: [Ljava.lang.String;@368247b9 4
-line (before): [315505175] [len = 11]
-line (after):   [315505175] [pad = 2]
+DEBUG: [Ljava.lang.String;@534a5a98 4
+line (before): [175953947] [len = 11]
+line (after):   [175953947] [pad = 2]
 line (before):  [len = 0]
 line (after):          [pad = 8]
 line (before):  [len = 0]
@@ -418,10 +169,86 @@ pad2: 3
 3: 
 4: 
 5: 
-6:   [315505175]
+6:   [175953947]
 7:         
 8:         
 9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@4f80542f
+{"balance":17.59,"cardCode":"132","cardNumber":"175953947","activated":true,"status":"New Card"}
+l: 10
+w: 15
+h: 15
+DEBUG: [175953947]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@121314f7 4
+line (before): [175953947] [len = 11]
+line (after):   [175953947] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [175953947]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@130c12b7
+l: 10
+w: 15
+h: 15
+DEBUG: $17.59
+
+cnt1: 1
+pad1: 4
+....
+DEBUG: [Ljava.lang.String;@5e600dd5 1
+line (before): $17.59 [len = 6]
+line (after):      $17.59 [pad = 5]
+cnt2: 5
+pad2: 5
+.....
+
+
+0: ===============
+1:    MyCards
+2: ===============
+3: 
+4: 
+5: 
+6: 
+7:      $17.59
+8: 
+9: 
 10: 
 11: 
 12: 
