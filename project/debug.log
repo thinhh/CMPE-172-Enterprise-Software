@@ -1,7 +1,7 @@
-{"balance":20,"cardCode":"132","cardNumber":"175953947","activated":false,"status":"New Card"}
-New Card: 175953947[132] Balance: 20.0
+{"balance":20,"cardCode":"556","cardNumber":"961683138","activated":false,"status":"New Card"}
+New Card: 961683138[556] Balance: 20.0
 Status: 200 
-{"balance":20,"cardCode":"132","cardNumber":"175953947","activated":true,"status":"New Card"}
+{"balance":20,"cardCode":"556","cardNumber":"961683138","activated":true,"status":"New Card"}
 ============================================
 --------- D E V I C E  S T A T E  ----------
 ============================================
@@ -99,7 +99,7 @@ Value: [Ljava.lang.String;@73e9cf30
 l: 10
 w: 15
 h: 15
-DEBUG: [175953947]
+DEBUG: [961683138]
 
 
 Scan Now
@@ -108,8 +108,8 @@ cnt1: 4
 pad1: 3
 ...
 DEBUG: [Ljava.lang.String;@1ed6388a 4
-line (before): [175953947] [len = 11]
-line (after):   [175953947] [pad = 2]
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
 line (before):  [len = 0]
 line (after):          [pad = 8]
 line (before):  [len = 0]
@@ -127,7 +127,7 @@ pad2: 3
 3: 
 4: 
 5: 
-6:   [175953947]
+6:   [961683138]
 7:         
 8:         
 9:     Scan Now
@@ -138,10 +138,12 @@ pad2: 3
 14: ===============
 15: [A][B][C][D][E]
 Value: [Ljava.lang.String;@5a45133e
+{"path":"/order/register/5012349/pay/961683138","error":"Bad Request","message":"Clear Paid Active Order!","timestamp":"2023-05-22T03:36:09.083+00:00","status":400}
+org.json.JSONException: JSONObject["balance"] not found.
 l: 10
 w: 15
 h: 15
-DEBUG: [175953947]
+DEBUG: [961683138]
 
 
 Scan Now
@@ -149,9 +151,9 @@ Scan Now
 cnt1: 4
 pad1: 3
 ...
-DEBUG: [Ljava.lang.String;@534a5a98 4
-line (before): [175953947] [len = 11]
-line (after):   [175953947] [pad = 2]
+DEBUG: [Ljava.lang.String;@60bd273d 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
 line (before):  [len = 0]
 line (after):          [pad = 8]
 line (before):  [len = 0]
@@ -169,7 +171,7 @@ pad2: 3
 3: 
 4: 
 5: 
-6:   [175953947]
+6:   [961683138]
 7:         
 8:         
 9:     Scan Now
@@ -179,12 +181,44 @@ pad2: 3
 13: 
 14: ===============
 15: [A][B][C][D][E]
-Value: [Ljava.lang.String;@4f80542f
-{"balance":17.59,"cardCode":"132","cardNumber":"175953947","activated":true,"status":"New Card"}
+Value: [Ljava.lang.String;@121314f7
 l: 10
 w: 15
 h: 15
-DEBUG: [175953947]
+DEBUG: $20.00
+
+cnt1: 1
+pad1: 4
+....
+DEBUG: [Ljava.lang.String;@130c12b7 1
+line (before): $20.00 [len = 6]
+line (after):      $20.00 [pad = 5]
+cnt2: 5
+pad2: 5
+.....
+
+
+0: ===============
+1:    MyCards
+2: ===============
+3: 
+4: 
+5: 
+6: 
+7:      $20.00
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@5e600dd5
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
 
 
 Scan Now
@@ -192,9 +226,9 @@ Scan Now
 cnt1: 4
 pad1: 3
 ...
-DEBUG: [Ljava.lang.String;@121314f7 4
-line (before): [175953947] [len = 11]
-line (after):   [175953947] [pad = 2]
+DEBUG: [Ljava.lang.String;@576d5deb 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
 line (before):  [len = 0]
 line (after):          [pad = 8]
 line (before):  [len = 0]
@@ -212,7 +246,7 @@ pad2: 3
 3: 
 4: 
 5: 
-6:   [175953947]
+6:   [961683138]
 7:         
 8:         
 9:     Scan Now
@@ -222,7 +256,92 @@ pad2: 3
 13: 
 14: ===============
 15: [A][B][C][D][E]
-Value: [Ljava.lang.String;@130c12b7
+Value: [Ljava.lang.String;@5d534f5d
+{"balance":17.59,"cardCode":"556","cardNumber":"961683138","activated":true,"status":"New Card"}
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@70e9c95d 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@4d5650ae
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@a38c7fe 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@6fdbe764
 l: 10
 w: 15
 h: 15
@@ -231,7 +350,7 @@ DEBUG: $17.59
 cnt1: 1
 pad1: 4
 ....
-DEBUG: [Ljava.lang.String;@5e600dd5 1
+DEBUG: [Ljava.lang.String;@51c668e3 1
 line (before): $17.59 [len = 6]
 line (after):      $17.59 [pad = 5]
 cnt2: 5
@@ -247,6 +366,358 @@ pad2: 5
 5: 
 6: 
 7:      $17.59
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@2e6a8155
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@6221a451 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@52719fb6
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@3012646b 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@4a883b15
+l: 10
+w: 15
+h: 15
+DEBUG: $17.59
+
+cnt1: 1
+pad1: 4
+....
+DEBUG: [Ljava.lang.String;@25641d39 1
+line (before): $17.59 [len = 6]
+line (after):      $17.59 [pad = 5]
+cnt2: 5
+pad2: 5
+.....
+
+
+0: ===============
+1:    MyCards
+2: ===============
+3: 
+4: 
+5: 
+6: 
+7:      $17.59
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@7b36aa0c
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@5824a83d 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@537f60bf
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@5677323c 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@18df8434
+l: 10
+w: 15
+h: 15
+DEBUG: $17.59
+
+cnt1: 1
+pad1: 4
+....
+DEBUG: [Ljava.lang.String;@65c7a252 1
+line (before): $17.59 [len = 6]
+line (after):      $17.59 [pad = 5]
+cnt2: 5
+pad2: 5
+.....
+
+
+0: ===============
+1:    MyCards
+2: ===============
+3: 
+4: 
+5: 
+6: 
+7:      $17.59
+8: 
+9: 
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@4d154ccd
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@229c6181 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@4686afc2
+{"balance":15.18,"cardCode":"556","cardNumber":"961683138","activated":true,"status":"New Card"}
+l: 10
+w: 15
+h: 15
+DEBUG: [961683138]
+
+
+Scan Now
+
+cnt1: 4
+pad1: 3
+...
+DEBUG: [Ljava.lang.String;@791f145a 4
+line (before): [961683138] [len = 11]
+line (after):   [961683138] [pad = 2]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before):  [len = 0]
+line (after):          [pad = 8]
+line (before): Scan Now [len = 8]
+line (after):     Scan Now [pad = 4]
+cnt2: 7
+pad2: 3
+...
+
+
+0: ===============
+1:   MyCardsPay
+2: ===============
+3: 
+4: 
+5: 
+6:   [961683138]
+7:         
+8:         
+9:     Scan Now
+10: 
+11: 
+12: 
+13: 
+14: ===============
+15: [A][B][C][D][E]
+Value: [Ljava.lang.String;@38cee291
+l: 10
+w: 15
+h: 15
+DEBUG: $15.18
+
+cnt1: 1
+pad1: 4
+....
+DEBUG: [Ljava.lang.String;@4b45a2f5 1
+line (before): $15.18 [len = 6]
+line (after):      $15.18 [pad = 5]
+cnt2: 5
+pad2: 5
+.....
+
+
+0: ===============
+1:    MyCards
+2: ===============
+3: 
+4: 
+5: 
+6: 
+7:      $15.18
 8: 
 9: 
 10: 

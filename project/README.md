@@ -66,6 +66,7 @@ Working on the Report/Journal
 ![worker](./image/deployment-worker-yaml.png)
 ## External IP for Spring Cashier IP: http://35.201.125.222/
 ## External IP for Spring API IP: http://35.226.99.230/api (Need to Provide API Key for Kong)
+## External IP for RabbitMQ: http://34.172.111.232/
 ## GKE PODS Running
 ![gke-pods](./image/GKE-pods.png)
 ## Cashier App
@@ -78,7 +79,7 @@ Working on the Report/Journal
 ![cashier-pod](./image/cashier-pod.png)
 - Cashier's App - Supports Order Selection - Dring Type, Size, Milk Option (3 points) 
 - Cashier's App - Rendering must use MVC by processing REST API calls from Starbucks API via Kong Gateway on GCP (5 points)
-- Cashier's App - Order Created via REST API call to Kong Endpoint with API key running on GCP (5 points)
+- Cashier's App - Order Created via REST API call to Kong Endpoint with API key running on GCP (5 points) <br>
 ![selection](./image/selection.png)
 ![selection-2](./image/selection-fullscreen.png)
 ![selection-3](./image/selection-place-order.png)
@@ -121,7 +122,8 @@ Worker listening on starbucks queue
 ![receiver](./image/source-code-4.png)<br>
 I am only highlight the important changes but the rest of the source code change was pushed to github
 - RabbitMQ - Evidence via Demo/Screenshots that the Functionality Works (i.e. via CURL or Postman Tests and Logs or RabbitMQ Console) (15 points)
-
+![rabbit](./image/rabbitmq.png)
+![logs](./image/worker-log.png)
 
 ## Mobile App Kong Connection
 - Kong Connection - Moible App should be connected to Starbucks API via Kong using API key (demo'ed during startup of Mobile App) (10 points)
@@ -160,9 +162,13 @@ Touch(2,2) to paid
 ![mysql-order-info](./image/mysql-order-info.png)
 ![mysql-orders](./image/mysql-order-drink.png)
 - And this is the rabbitMQ activity chart for order thata was paid and get pick up by workers
-![rabbitmq](./image/rabbitmq.png)
+![rabbitmq](./image/rabbitmq.png) <br>
+Worker Pod Log <br>
+![worker-log](./image/worker-log.png)
+I tried to push the same order multiple time because I couldn't catch the MYSQL change the first time so that explain the multiple process order of the same order-number
+
 # Demo
-- Youtube Link: 
+- Youtube Link: https://youtu.be/Qn62wVQejBQ
 # Project Journal with Weekly Status Reports to include
 - A discussion of your accomplishments that week with a list of links to your Code Commits and PRs.
     5/1 - 5/8: Figuring out the over architecture and doing some prep work like porting node.js to Spring, create mysql, create rabbit image
