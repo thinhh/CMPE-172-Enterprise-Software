@@ -173,7 +173,8 @@ Worker Pod Log <br>
 I tried to push the same order multiple time because I couldn't catch the MYSQL change the first time so that explain the multiple process order of the same order-number
 
 # Demo
-- Youtube Link: https://youtu.be/Qn62wVQejBQ
+- Shorter Youtube Link: https://youtu.be/kE-Xyy-sJRU <br>
+Explannation: Sometimes there are black screen because I had to pause the recording to find my stuffs, read the requirement, and rerun the jumpbox pod because sometimes it crashed. 
 # Project Journal with Weekly Status Reports to include
 - A discussion of your accomplishments that week with a list of links to your Code Commits and PRs.
     5/1 - 5/8: Figuring out the over architecture and doing some prep work like porting node.js to Spring, create mysql, create rabbit image
