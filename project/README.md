@@ -69,6 +69,8 @@ Working on the Report/Journal
 ## External IP for RabbitMQ: http://34.172.111.232/
 ## GKE PODS Running
 ![gke-pods](./image/GKE-pods.png)
+![gke-pods-ip](./image/pods-internal-ip.png)
+![ingress-external](./image/ingress-external-ip.png)
 ## Cashier App
 - Support Admin Logins for Starbucks Employees (5 points) -- (must not store in memory or hard code in source code, must support new account registration and logout) 
 ![login](./image/login-page.png)
